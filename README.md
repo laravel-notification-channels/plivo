@@ -1,12 +1,12 @@
 # Plivo notifications channel for Laravel 5.3
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pilvo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pilvo)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pilvo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/plivo)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/laravel-notification-channels/pilvo/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/pilvo)
+[![Build Status](https://img.shields.io/travis/laravel-notification-channels/plivo/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/plivo)
 [![StyleCI](https://styleci.io/repos/65715218/shield)](https://styleci.io/repos/65715218)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/f4bd99c4-092c-4e36-a319-826f142c1ec4.svg?style=flat-square)](https://insight.sensiolabs.com/projects/f4bd99c4-092c-4e36-a319-826f142c1ec4)
-[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/pilvo.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pilvo)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/pilvo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pilvo)
+[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/plivo.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/plivo)
+[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/plivo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/plivo)
 
 
 This package makes it easy to send SMS notifications using [Plivo][https://plivo.com] with Laravel 5.3.
