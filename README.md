@@ -9,7 +9,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/plivo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/plivo)
 
 
-This package makes it easy to send SMS notifications using [Plivo][https://plivo.com] with Laravel 5.3.
+This package makes it easy to send SMS notifications using [Plivo](https://plivo.com) with Laravel 5.3.
 
 ## Contents
 
