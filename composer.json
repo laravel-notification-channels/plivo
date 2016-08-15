@@ -1,0 +1,39 @@
+{
+    "name": "laravel-notification-channels/plivo",
+    "description": "Plivo SMS notifications driver for Laravel",
+    "homepage": "https://github.com/laravel-notification-channels/plivo",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sid K",
+            "email": "sid@koomai.net",
+            "homepage": "http://koomai.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/notifications": "^5.3@dev",
+        "illuminate/support": "^5.3@dev",
+        "illuminate/events": "^5.3@dev",
+        "plivo/plivo-php": "^1.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\Plivo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\Plivo\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

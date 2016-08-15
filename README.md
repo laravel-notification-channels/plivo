@@ -1,0 +1,115 @@
+# Plivo notifications channel for Laravel 5.3
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pilvo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pilvo)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/laravel-notification-channels/pilvo/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/pilvo)
+[![StyleCI](https://styleci.io/repos/65379321/shield)](https://styleci.io/repos/65379321)
+[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/9015691f-130d-4fca-8710-72a010abc684.svg?style=flat-square)](https://insight.sensiolabs.com/projects/9015691f-130d-4fca-8710-72a010abc684)
+[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/pilvo.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pilvo)
+[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/pilvo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pilvo)
+
+
+This package makes it easy to send SMS notifications using [Plivo][https://plivo.com] with Laravel 5.3.
+
+## Contents
+
+- [Installation](#installation)
+	- [Setting up the Plivo service](#setting-up-the-Plivo-service)
+- [Usage](#usage)
+	- [Available Message methods](#available-message-methods)
+- [Changelog](#changelog)
+- [Testing](#testing)
+- [Security](#security)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [License](#license)
+
+
+## Installation
+
+You can install this package via composer:
+`composer require laravel-notification-channels/plivo`
+
+Add the service provider to `config/app.php`:
+```
+// config/app.php
+'providers' => [
+    ...
+    NotificationChannels\Plivo\PlivoServiceProvider::class,
+],
+```
+
+### Setting up your Plivo service
+Log in to your [Plivo dashboard](https://manage.plivo.com/dashboard/) and grab your Auth Id, Auth Token and the phone number you're sending from. Add them to `config/services.php`.  
+```
+// config/services.php
+...
+'plivo' => [
+    'auth_id' => env('PLIVO_AUTH_ID'),
+    'auth_token' => env('PLIVO_AUTH_TOKEN'),
+    // Country code, area code and number without symbols or spaces
+    'from_number' => env('PLIVO_FROM_NUMBER'),
+],
+```
+
+## Usage
+
+Follow Laravel's documentation to add the channel your Notification class:
+```
+use Illuminate\Notifications\Notification;
+use NotificationChannels\Plivo\PlivoChannel;
+use NotificationChannels\Plivo\PlivoMessage;
+
+public function via($notifiable)
+{
+    return [Plivo::class];
+}
+
+public function toPlivo($notifiable)
+{
+    return (new PlivoMessage)
+                    ->content('This is a test SMS via Plivo using Laravel Notifications!');
+}
+```  
+
+Add a `routeNotificationForPlivo` method to your Notifiable model to return the phone number:  
+
+```
+public function routeNotificationForPlivo()
+{
+    // Country code, area code and number without symbols or spaces
+    return preg_replace('/\D+/', '', $this->phone_number);
+}
+```    
+
+### Available methods
+
+* `content()` - (string), SMS notification body
+* `from()` - (integer) Override default from number
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Security
+
+If you discover any security related issues, please email sid@koomai.net instead of using the issue tracker.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Credits
+
+- [Sid K](https://github.com/koomai)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
