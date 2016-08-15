@@ -21,8 +21,19 @@ class PlivoMessage
     /**
      * Create a new message instance.
      *
-     * @param  string  $message
-     * @return void
+     * @param  string $content
+     *
+     * @return static
+     */
+    public static function create($content = '')
+    {
+        return new static($content);
+    }
+
+    /**
+     * Create a new message instance.
+     *
+     * @param  string  $content
      */
     public function __construct($content = '')
     {
@@ -33,6 +44,7 @@ class PlivoMessage
      * Set the message content.
      *
      * @param  string  $content
+     *
      * @return $this
      */
     public function content($content)
@@ -45,7 +57,8 @@ class PlivoMessage
     /**
      * Set the phone number the message should be sent from.
      *
-     * @param  string  $number
+     * @param  string  $from
+     *
      * @return $this
      */
     public function from($from)

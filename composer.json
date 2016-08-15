@@ -1,6 +1,11 @@
 {
     "name": "laravel-notification-channels/plivo",
     "description": "Plivo SMS notifications driver for Laravel",
+    "keywords": [
+        "laravel",
+        "notifications",
+        "pilvo",
+    ],
     "homepage": "https://github.com/laravel-notification-channels/plivo",
     "license": "MIT",
     "authors": [

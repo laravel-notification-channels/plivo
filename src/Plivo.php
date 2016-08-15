@@ -6,19 +6,13 @@ use Plivo\RestAPI as PlivoRestApi;
 
 class Plivo extends PlivoRestApi
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $auth_id;
 
-    /**
-     * @var string
-     */
-    protected $auth_token;
+    /** @var string */
+    protected $authToken;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $from;
 
     /**
@@ -30,10 +24,10 @@ class Plivo extends PlivoRestApi
     public function __construct(array $config)
     {
         $this->auth_id = $config['auth_id'];
-        $this->auth_token = $config['auth_token'];
+        $this->authToken = $config['auth_token'];
         $this->from = $config['from_number'];
 
-        parent::__construct($this->auth_id, $this->auth_token);
+        parent::__construct($this->auth_id, $this->authToken);
     }
 
     /**

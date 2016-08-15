@@ -10,8 +10,6 @@ use Illuminate\Notifications\Notification;
 class PlivoChannel
 {
     /**
-     * The Plivo instance.
-     *
      * @var \NotificationChannels\Plivo\Plivo;
      */
     protected $plivo;
@@ -24,8 +22,6 @@ class PlivoChannel
     protected $from;
 
     /**
-     * Create a new Plivo channel instance.
-     *
      * @return  void
      */
     public function __construct(Plivo $plivo)
