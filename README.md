@@ -31,7 +31,8 @@ You can install this package via composer:
 `composer require laravel-notification-channels/plivo`
 
 Add the service provider to `config/app.php`:
-```
+
+```php
 // config/app.php
 'providers' => [
     ...
@@ -41,7 +42,8 @@ Add the service provider to `config/app.php`:
 
 ### Setting up your Plivo service
 Log in to your [Plivo dashboard](https://manage.plivo.com/dashboard/) and grab your Auth Id, Auth Token and the phone number you're sending from. Add them to `config/services.php`.  
-```
+
+```php
 // config/services.php
 ...
 'plivo' => [
@@ -55,7 +57,8 @@ Log in to your [Plivo dashboard](https://manage.plivo.com/dashboard/) and grab y
 ## Usage
 
 Follow Laravel's documentation to add the channel your Notification class:
-```
+
+```php
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Plivo\PlivoChannel;
 use NotificationChannels\Plivo\PlivoMessage;
@@ -74,7 +77,7 @@ public function toPlivo($notifiable)
 
 Add a `routeNotificationForPlivo` method to your Notifiable model to return the phone number:  
 
-```
+```php
 public function routeNotificationForPlivo()
 {
     // Country code, area code and number without symbols or spaces
