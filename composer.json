@@ -4,7 +4,7 @@
     "keywords": [
         "laravel",
         "notifications",
-        "pilvo",
+        "plivo",
     ],
     "homepage": "https://github.com/laravel-notification-channels/plivo",
     "license": "MIT",
