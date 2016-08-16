@@ -44,12 +44,6 @@ class PlivoChannel
             return;
         }
 
-        $shouldSendMessage = event(new SendingMessage($notifiable, $notification), [], true) !== false;
-
-        if (! $shouldSendMessage) {
-            return;
-        }
-
         $message = $notification->toPlivo($notifiable);
 
         if (is_string($message)) {
@@ -65,7 +59,5 @@ class PlivoChannel
         if ($response['status'] !== 202) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($response);
         }
-
-        event(new MessageWasSent($notifiable, $notification));
     }
 }
