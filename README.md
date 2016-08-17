@@ -66,7 +66,7 @@ use NotificationChannels\Plivo\PlivoMessage;
 
 public function via($notifiable)
 {
-    return [Plivo::class];
+    return [PlivoChannel::class];
 }
 
 public function toPlivo($notifiable)
