@@ -3,8 +3,6 @@
 namespace NotificationChannels\Plivo;
 
 use NotificationChannels\Plivo\Exceptions\CouldNotSendNotification;
-use NotificationChannels\Plivo\Events\MessageWasSent;
-use NotificationChannels\Plivo\Events\SendingMessage;
 use Illuminate\Notifications\Notification;
 
 class PlivoChannel
