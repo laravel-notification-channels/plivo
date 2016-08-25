@@ -19,7 +19,7 @@
     "require": {
         "php": ">=5.6.4",
         "illuminate/notifications": "5.3.*",
-        "illuminate/support": "5.3.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*",
         "illuminate/events": "5.3.*",
         "plivo/plivo-php": "^1.1"
     },
