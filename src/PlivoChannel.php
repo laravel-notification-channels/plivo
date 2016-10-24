@@ -57,5 +57,7 @@ class PlivoChannel
         if ($response['status'] !== 202) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($response);
         }
+
+        return $response;
     }
 }
