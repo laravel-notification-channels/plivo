@@ -40,4 +40,12 @@ class PlivoMessageTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('1234567890', $this->message->from);
     }
+
+    /** @test */
+    public function it_can_set_the_webhook()
+    {
+        $this->message->webhook('https://example.com');
+
+        $this->assertEquals('https://example.com', $this->message->webhook);
+    }
 }

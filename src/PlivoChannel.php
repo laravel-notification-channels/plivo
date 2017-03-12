@@ -20,12 +20,20 @@ class PlivoChannel
     protected $from;
 
     /**
+     * The webhook url that plivo will send status change notifications to.
+     *
+     * @var string
+     */
+    protected $webhook;
+
+    /**
      * @return  void
      */
     public function __construct(Plivo $plivo)
     {
         $this->plivo = $plivo;
         $this->from = $this->plivo->from();
+        $this->webhook = $this->plivo->webhook();
     }
 
     /**
@@ -52,6 +60,7 @@ class PlivoChannel
             'src' => $message->from ?: $this->from,
             'dst' => $to,
             'text' => trim($message->content),
+            'url' => $message->webhook ?: $this->webhook
         ]);
 
         if ($response['status'] !== 202) {

@@ -19,15 +19,22 @@ class PlivoMessage
     public $from;
 
     /**
+     * The webhook url plivo will call for status updates.
+     *
+     * @var string
+     */
+    public $webhook;
+
+    /**
      * Create a new message instance.
      *
      * @param  string $content
      *
      * @return static
      */
-    public static function create($content = '')
+    public static function create($content = '', $webhook = '')
     {
-        return new static($content);
+        return new static($content, $webhook);
     }
 
     /**
@@ -35,9 +42,11 @@ class PlivoMessage
      *
      * @param  string  $content
      */
-    public function __construct($content = '')
+    public function __construct($content = '', $webhook = '')
     {
         $this->content = $content;
+
+        $this->webhook = $webhook;
     }
 
     /**
@@ -64,6 +73,20 @@ class PlivoMessage
     public function from($from)
     {
         $this->from = $from;
+
+        return $this;
+    }
+
+    /**
+     * Set the webhook url plivo will call for status updates.
+     *
+     * @param  string  $webhook
+     *
+     * @return $this
+     */
+    public function webhook($webhook)
+    {
+        $this->webhook = $webhook;
 
         return $this;
     }
