@@ -29,7 +29,7 @@ class PlivoTest extends \PHPUnit_Framework_TestCase
             'auth_id' => 'UNIT_TEST_AUTH_ID',
             'auth_token' => 'UNIT_TEST_AUTH_ID',
             'from_number' => '18885551111',
-            'webhook' => 'https://examplewebhook.com'
+            'webhook' => 'https://examplewebhook.com',
         ];
 
         $plivo = new Plivo($config);

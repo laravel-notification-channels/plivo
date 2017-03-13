@@ -2,8 +2,8 @@
 
 namespace NotificationChannels\Plivo;
 
-use NotificationChannels\Plivo\Exceptions\CouldNotSendNotification;
 use Illuminate\Notifications\Notification;
+use NotificationChannels\Plivo\Exceptions\CouldNotSendNotification;
 
 class PlivoChannel
 {
@@ -60,7 +60,7 @@ class PlivoChannel
             'src' => $message->from ?: $this->from,
             'dst' => $to,
             'text' => trim($message->content),
-            'url' => $message->webhook ?: $this->webhook
+            'url' => $message->webhook ?: $this->webhook,
         ]);
 
         if ($response['status'] !== 202) {

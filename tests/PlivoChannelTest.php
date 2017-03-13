@@ -2,9 +2,9 @@
 
 namespace NotificationChannels\Plivo\Test;
 
+use Mockery;
 use NotificationChannels\Plivo\PlivoChannel;
 use NotificationChannels\Plivo\PlivoMessage;
-use Mockery;
 
 class PlivoChannelTest extends \PHPUnit_Framework_TestCase
 {
@@ -15,7 +15,7 @@ class PlivoChannelTest extends \PHPUnit_Framework_TestCase
     protected $baseConfig = [
         'auth_id' => 'UNIT_TEST_AUTH_ID',
         'auth_token' => 'UNIT_TEST_AUTH_TOKEN',
-        'from_number' => '18885551111'
+        'from_number' => '18885551111',
     ];
 
     /**
@@ -45,7 +45,7 @@ class PlivoChannelTest extends \PHPUnit_Framework_TestCase
             'src' => $config['from_number'],
             'dst' => $this->notifiable->routeNotificationFor('plivo'),
             'text' => 'Content',
-            'url' => ''
+            'url' => '',
         ]);
 
         $notification = $this->notification(new PlivoMessage('Content'));
@@ -65,7 +65,7 @@ class PlivoChannelTest extends \PHPUnit_Framework_TestCase
             'src' => $config['from_number'],
             'dst' => $this->notifiable->routeNotificationFor('plivo'),
             'text' => 'Content',
-            'url' => 'https://defaultexample.com'
+            'url' => 'https://defaultexample.com',
         ]);
 
         $notification = $this->notification(new PlivoMessage('Content'));
@@ -85,7 +85,7 @@ class PlivoChannelTest extends \PHPUnit_Framework_TestCase
             'src' => $config['from_number'],
             'dst' => $this->notifiable->routeNotificationFor('plivo'),
             'text' => 'Content',
-            'url' => 'https://messagewebhook.com'
+            'url' => 'https://messagewebhook.com',
         ]);
 
         $notification = $this->notification(new PlivoMessage('Content', 'https://messagewebhook.com'));
