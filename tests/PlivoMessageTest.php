@@ -3,14 +3,14 @@
 namespace NotificationChannels\Plivo\Test;
 
 use NotificationChannels\Plivo\PlivoMessage;
+use PHPUnit\Framework\TestCase;
 
-class PlivoMessageTest extends \PHPUnit_Framework_TestCase
+class PlivoMessageTest extends TestCase
 {
     /** @var \NotificationChannels\Plivo\PlivoMessage */
     protected $message;
 
-    /** @test */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
