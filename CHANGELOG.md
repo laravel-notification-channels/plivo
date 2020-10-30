@@ -2,6 +2,9 @@
 
 All notable changes to `Plivo` will be documented in this file
 
+## 2.2.0 - 2020-10-30
+- Support laravel 8
+
 ## 1.2.0 - 2019-09-13
 
 - Drop support for PHP < 7.2
