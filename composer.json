@@ -1,5 +1,5 @@
 {
-    "name": "laravel-notification-channels/plivo",
+    "name": "loiemilio/plivo",
     "description": "Plivo SMS notifications driver for Laravel",
     "keywords": [
         "laravel",
