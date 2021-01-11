@@ -1,4 +1,4 @@
-# Plivo notifications channel for Laravel 5.3
+# Plivo notifications channel for Laravel 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/plivo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/plivo)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -10,7 +10,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/plivo.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/plivo)
 
 
-This package makes it easy to send SMS notifications using [Plivo](https://plivo.com) with Laravel 5.3.
+This package makes it easy to send SMS notifications using [Plivo](https://plivo.com) with Laravel 5.5+, 6.x & 7.x.
 
 ## Contents
 
@@ -28,18 +28,11 @@ This package makes it easy to send SMS notifications using [Plivo](https://plivo
 
 ## Installation
 
-You can install this package via composer:
-`composer require laravel-notification-channels/plivo`
-
-Add the service provider to `config/app.php`:
-
-```php
-// config/app.php
-'providers' => [
-    ...
-    NotificationChannels\Plivo\PlivoServiceProvider::class,
-],
+Install the package via composer:
+```bash
+composer require laravel-notification-channels/plivo
 ```
+
 
 ### Setting up your Plivo service
 Log in to your [Plivo dashboard](https://manage.plivo.com/dashboard/) and grab your Auth Id, Auth Token and the phone number you're sending from. Add them to `config/services.php`.  
