@@ -45,6 +45,8 @@ Log in to your [Plivo dashboard](https://manage.plivo.com/dashboard/) and grab y
     'auth_token' => env('PLIVO_AUTH_TOKEN'),
     // Country code, area code and number without symbols or spaces
     'from_number' => env('PLIVO_FROM_NUMBER'),
+    // The url Plivo will request to notify about changing sms statuses
+    'webhook' => ''
 ],
 ```
 
@@ -81,8 +83,9 @@ public function routeNotificationForPlivo()
 
 ### Available methods
 
-* `content()` - (string), SMS notification body
+* `content()` - (string) SMS notification body
 * `from()` - (integer) Override default from number
+* `webhook()` - (string) Override the webhook in the [config file](#setting-up-your-plivo-service)
 
 ## Changelog
 

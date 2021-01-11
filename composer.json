@@ -21,6 +21,7 @@
         "illuminate/notifications": "~5.5 || ~6.0 || ~7.0",
         "illuminate/support": "~5.5 || ~6.0 || ~7.0",
         "illuminate/events": "~5.5 || ~6.0 || ~7.0",
+        "illuminate/queue": "~5.5 || ~6.0 || ~7.0",
         "plivo/plivo-php": "^1.1"
     },
     "require-dev": {
