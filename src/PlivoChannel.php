@@ -4,11 +4,12 @@ namespace NotificationChannels\Plivo;
 
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Plivo\Exceptions\CouldNotSendNotification;
+use Plivo\Resources\Message\MessageCreateResponse;
 
 class PlivoChannel
 {
     /**
-     * @var \NotificationChannels\Plivo\Plivo;
+     * @var Plivo;
      */
     protected $plivo;
 
@@ -31,15 +32,16 @@ class PlivoChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
+     * @param mixed                                  $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
-     * @throws \NotificationChannels\Plivo\Exceptions\CouldNotSendNotification
+     * @return MessageCreateResponse|null
+     * @throws CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {
-        if (! $to = $notifiable->routeNotificationFor('plivo')) {
-            return;
+        if (!$to = $notifiable->routeNotificationFor('plivo')) {
+            return null;
         }
 
         $message = $notification->toPlivo($notifiable);
@@ -48,13 +50,14 @@ class PlivoChannel
             $message = new PlivoMessage($message);
         }
 
-        $response = $this->plivo->send_message([
-            'src' => $message->from ?: $this->from,
-            'dst' => $to,
-            'text' => trim($message->content),
-        ]);
+        /** @var MessageCreateResponse $response */
+        $response = $this->plivo->messages->create(
+            $message->from ?: $this->from,
+            $to,
+            trim($message->content)
+        );
 
-        if ($response['status'] !== 202) {
+        if ($response->getStatusCode() > 400) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($response);
         }
 
