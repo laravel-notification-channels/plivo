@@ -12,15 +12,15 @@
         {
             "name": "Sid K",
             "email": "sid@koomai.net",
-            "homepage": "http://koomai.net",
+            "homepage": "https://koomai.net",
             "role": "Developer"
         }
     ],
     "require": {
         "php": ">=7.2",
-        "illuminate/notifications": "~5.5 || ~6.0 || ~7.0 || ~8.0",
-        "illuminate/support": "~5.5 || ~6.0 || ~7.0 || ~8.0",
-        "illuminate/events": "~5.5 || ~6.0 || ~7.0 || ~8.0",
+        "illuminate/notifications": "~6.0 || ~7.0 || ~8.0",
+        "illuminate/support": "~6.0 || ~7.0 || ~8.0",
+        "illuminate/events": "~6.0 || ~7.0 || ~8.0",
         "plivo/plivo-php": "^1.1"
     },
     "require-dev": {
@@ -42,5 +42,12 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NotificationChannels\\Plivo\\PlivoServiceProvider"
+            ]
+        }
     }
 }
