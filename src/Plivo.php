@@ -2,7 +2,7 @@
 
 namespace NotificationChannels\Plivo;
 
-use Plivo\RestAPI as PlivoRestApi;
+use Plivo\RestClient as PlivoRestApi;
 
 class Plivo extends PlivoRestApi
 {
