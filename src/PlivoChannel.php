@@ -34,7 +34,8 @@ class PlivoChannel
      * @param mixed $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
-     * @throws \NotificationChannels\Plivo\Exceptions\CouldNotSendNotification
+     * @return void
+     * @throws CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {
@@ -54,7 +55,7 @@ class PlivoChannel
             trim($message->content),
         );
 
-        if ($response['status'] !== 202) {
+        if ($response->statusCode !== 202) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($response);
         }
 
