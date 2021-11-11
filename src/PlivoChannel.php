@@ -54,7 +54,9 @@ class PlivoChannel
         $response = $this->plivo->messages->create(
             $message->from ?: $this->from,
             [$to],
-            trim($message->content)
+            trim($message->content),
+            [],
+            null
         );
 
         if ($response->statusCode !== 202) {
