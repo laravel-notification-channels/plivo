@@ -55,7 +55,7 @@ class PlivoChannel
             $message->from ?: $this->from,
             [$to],
             trim($message->content),
-            [],
+            $notifiable->optionalArgumentsForNotification() ?? [],
             null
         );
 
