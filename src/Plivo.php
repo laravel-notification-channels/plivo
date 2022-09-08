@@ -2,7 +2,7 @@
 
 namespace NotificationChannels\Plivo;
 
-use Plivo\RestAPI as PlivoRestApi;
+use Plivo\RestClient as PlivoRestApi;
 
 class Plivo extends PlivoRestApi
 {
@@ -18,7 +18,7 @@ class Plivo extends PlivoRestApi
     /**
      * Create a new Plivo RestAPI instance.
      *
-     * @param array $config
+     * @param  array  $config
      * @return void
      */
     public function __construct(array $config)
