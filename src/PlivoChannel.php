@@ -34,7 +34,6 @@ class PlivoChannel
      *
      * @param  mixed  $notifiable
      * @param  \Illuminate\Notifications\Notification  $notification
-     *
      * @return MessageCreateResponse|null
      *
      * @throws CouldNotSendNotification
