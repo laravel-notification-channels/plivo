@@ -21,7 +21,7 @@ class PlivoChannel
     protected $from;
 
     /**
-     * @return  void
+     * @return void
      */
     public function __construct(Plivo $plivo)
     {
@@ -32,10 +32,11 @@ class PlivoChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param  mixed  $notifiable
+     * @param  \Illuminate\Notifications\Notification  $notification
      *
      * @return MessageCreateResponse|null
+     *
      * @throws CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
